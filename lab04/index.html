@@ -96,10 +96,10 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
                                     return j!=0 && (i==4||i==5) && d==1?"./92.png":"./93.png";
                                 })
                                 .attr("width",function(d,i,j) {
-                                    return (j!=0 &&(i==4||i==5))? 60:0;
+                                    return j!=0 &&(i==4||i==5) && d!=""? 60:0;
                                 })
                                 .attr("height",function(d,i,j) {
-                                    return (j!=0 &&(i==4||i==5))? 60:0;
+                                    return j!=0 &&(i==4||i==5) && d !=""? 60:0;
                                 });
             });
         </script>
