@@ -126,41 +126,41 @@
 					})
 				})
 
-				// document.getElementById('dropfile').addEventListener('dragover',function(evt){
-				// 	evt.preventDefault()
-				// })
+				document.getElementById('dropfile').addEventListener('dragover',function(evt){
+					evt.preventDefault()
+				})
 
-				// document.getElementById('dropfile').addEventListener('drop', function(evt){
-				// 	evt.preventDefault()
+				document.getElementById('dropfile').addEventListener('drop', function(evt){
+					evt.preventDefault()
 
-				// 	var files = evt.dataTransfer.files
+					var files = evt.dataTransfer.files
 
-				// 	if (files.length) {
-                //         if (treemapContainer.innerHTML.length) {
-                //             treemapContainer.innerHTML = ''
-                //         }
+					if (files.length) {
+                        if (treemapContainer.innerHTML.length) {
+                            treemapContainer.innerHTML = ''
+                        }
 
-                //         if (objectKeys.innerHTML.length) {
-                //             objectKeys.innerHTML = ''
-				// 		}
+                        if (objectKeys.innerHTML.length) {
+                            objectKeys.innerHTML = ''
+						}
 
-				// 		var csvFile = files[0]
+						var csvFile = files[0]
 
-				// 		//讀取csv
-				// 		var fr = new FileReader()
+						//讀取csv
+						var fr = new FileReader()
+						
+                        fr.onload = function(){
+                            dataLoader(fr.result, function(){
+								dataClassifier(objectKeys.value, function(data, layers){
+									node = getNode(data, layers, treemapContainer)
+									treemapContainer.innerHTML = node.innerHTML
+								}) 
+							})			                         
+                        }
 
-                //         fr.onload = function(){
-                //             dataLoader(fr.result, function(){
-				// 				dataClassifier(objectKeys.value, function(data, layers){
-				// 					node = getNode(data, layers, treemapContainer)
-				// 					treemapContainer.innerHTML = node.innerHTML
-				// 				}) 
-				// 			})			                         
-                //         }
-
-				// 		fr.readAsText(csvFile)
-				// 	}
-				// })
+						fr.readAsText(csvFile)
+					}
+				})
 			})
 		</script>
 
