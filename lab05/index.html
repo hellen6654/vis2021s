@@ -25,22 +25,25 @@
     #demo {
       border: solid 2px red;
       padding: 4px;
+      
     }
 
     div.bar {
       display: inline-block;
       width: 20px;
       height: 100px;
-      /* We'll override height later */
       background-color: cyan;
-      /* border: solid 1px black; */
       margin: 2px;
+    }
+    .transformed{
+      transform: scale(2);
+      transform-origin: top left;
     }
   </style>
 </head>
 
 <body>
-  <div id="demo">
+  <div id="demo" class="transformed">
     <p class="aver"></p>
   </div>
   <script type="text/javascript">
