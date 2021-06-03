@@ -69,6 +69,8 @@
     <br />
     <label for="color">Color:</label>
     <input id="color" type="color" value="#4c4cd6">
+    <br/>
+    <button id="replay">Replay</button>
     <hr>
 
     <svg id="first" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
@@ -255,6 +257,7 @@
     $("#speed").val(5);
     $("#speed").bind("change", changeVal);
     $("#color").bind("change", changeVal);
+    $("#replay").bind("click",changeVal);
     changeVal();
 
     function changeVal() {
