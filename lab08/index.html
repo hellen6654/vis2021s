@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Lab 8</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap');
 
@@ -39,6 +39,7 @@
     }
   </style>
   <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -61,7 +62,7 @@
   <div id="demo">
     Demo
     <br />
-    <label for="speed">Speed:</label>
+    <label id="speed_lable" for="speed">Speed:</label>
     <select id="speed">
     </select>
     <br />
@@ -250,8 +251,9 @@
     for (let i = 1; i <= 10; i++) {
       $("#speed").append(new Option(i, i));
     }
-    $("#speed").val(1);
-
+    $("#speed").val(5);
+    $('#speed_lable').hide();
+    $("#speed").hide();
     $("#speed").bind("change", changeVal);
     $("#color").bind("change", changeVal);
     changeVal();
